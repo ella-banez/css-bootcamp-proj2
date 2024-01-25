@@ -36,7 +36,7 @@ function BannerNavigation(){
 
 function Dropdown(){
 
-    let dropdown = document.getElementsByClassName('dropdown');
+    const dropdown = document.getElementsByClassName('dropdown');
     
     if(dropdown.item(0).classList.contains('dd-close')){
         dropdown.item(0).classList.remove('dd-close');
@@ -46,19 +46,28 @@ function Dropdown(){
    
 }
 
-let menuFirst = document.getElementById('menu-1');
-menuFirst.addEventListener('click', Dropdown)
 
+function EventListeners(){
 
+    const menuFirst = document.getElementById('menu-1');
+    const menuEl = document.querySelector('.menu-icon');
+    const btnSignup = document.getElementById('btn-signup');
+    const btnLogin = document.getElementById('btn-login');
+    const btnClose = document.getElementsByClassName('btn-close');
+    const btnModal = document.getElementById('btn-login-signup');
 
+    menuFirst.addEventListener('click', Dropdown)
+    menuEl.addEventListener('click', toggleNavigation);
 
+    btnSignup.addEventListener('click', OpenForm);
+    btnLogin.addEventListener('click', OpenForm);
+    btnClose[0].addEventListener('click', CloseModal);
+    btnModal.addEventListener('click', OpenModal);
+}
 
-const menuEl = document.querySelector('.menu-icon');
-const lines = document.querySelectorAll('.line');
-
-let check = 0;
 
 function toggleNavigation(){
+    const lines = document.querySelectorAll('.line');
     const mainNav = document.querySelector('.nav-main-list');
     
     if(mainNav.classList.contains('show')){
@@ -67,13 +76,44 @@ function toggleNavigation(){
         mainNav.classList.add('show');
     };
 
-    // console.log(mainNav);
-
     lines.forEach(line => line.classList.toggle('x'));
 };
 
+const modal = document.getElementsByClassName('modal');
 
-menuEl.addEventListener('click', toggleNavigation);
+function OpenForm() {
+
+    let i;
+    const tablinks = document.getElementsByClassName('tablinks');
+    const tabContent = document.getElementsByClassName('tabcontent');
+
+    for (i=0; i < tablinks.length; i++){
+       if(tablinks[i].classList.contains('active')){
+            tablinks[i].classList.remove('active');
+       }else{
+        tablinks[i].classList.add('active');
+       }
+    }
+
+    for (i=0; i < tabContent.length; i++){
+        if(tabContent[i].classList.contains('hide')){
+             tabContent[i].classList.remove('hide');
+        }else{
+         tabContent[i].classList.add('hide');
+        }
+     }
+  }
+
+function CloseModal(){
+    modal[0].classList.add('hide');
+}
+
+function OpenModal(){
+   modal[0].classList.toggle('hide');
+}
+
+
 
 
 BannerNavigation();
+EventListeners();

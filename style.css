@@ -21,6 +21,124 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+.modal{ 
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.50);
+    z-index: 20;
+}
+
+.form-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 3rem;
+    width: 60rem;
+}
+
+.btn-close{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 3rem;
+    color: #6c6c6c;
+    float: right;
+}
+
+.btn-close:hover{
+    color: #000;
+}
+
+.tab{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.tab button {
+    padding: 1.5rem;
+    width: 50%;
+    background-color: #B7C5C5;
+    outline: none;
+    border: 1px solid #88A4AC;
+    font-size: 16px;
+    font-style: normal;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+}
+
+.tab button:hover{
+    background-color: #88A4AC;
+    color: #fff;
+}
+
+.tab button.active{
+    background-color: #507D80;
+    color: #fff;
+}
+
+.tabcontent{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    width: 100%;
+}
+
+.tabcontent input{
+    color: #000;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #a3a3a3;
+    border-radius: 5px;
+    outline: none;
+    transition: all .3s ease-in-out;
+}
+
+.tabcontent input:focus{
+    border: 1px solid #545454;
+}
+
+.tabcontent button{
+    display: block;
+    font-size: 16px;
+}
+
+.tabcontent h3 {
+    color: #000;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tabcontent.active{
+    display:flex !important;
+}
+
+.fullname-wrapper{
+    display: flex;
+    column-gap: 1.5rem;
+}
+
+.fullname-wrapper input {
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
 .container {
     display:grid;
     font-size: large;
@@ -1016,6 +1134,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 540px){
+
+    .form-wrapper{
+        padding: 3rem;
+        width: 89%;
+    }
 
     .nav-secondary-wrapper{
         row-gap: 2rem;

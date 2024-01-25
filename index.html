@@ -11,7 +11,36 @@
     
     <title>Furniture Store</title>
 </head>
-<body> 
+<body>
+    
+    <div class="modal hide">
+        <div class="form-wrapper">
+            <button class="btn-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="tab">
+                <button id="btn-signup" class="tablinks active" >Sign-up</button>
+                <button id="btn-login" class="tablinks" >Log in</button>
+            </div>
+
+            <form action="#" id="signup" class="tabcontent">
+                <h3>Sign-up</h3>
+                <div class="fullname-wrapper">
+                    <input type="text" placeholder="First name">
+                    <input type="text" placeholder="Last name">
+                </div>
+                <input type="text" placeholder="Username">
+                <input type="email" placeholder="Email Address">
+                <input type="password" placeholder="Password">
+                <button type="submit" class="btn-primary-small">Signup</button>
+            </form>
+
+            <form action="#" id="login" class="tabcontent hide">
+                <h3>Log in</h3>
+                <input type="email" placeholder="Email Address">
+                <input type="password" placeholder="Password">
+                <button type="submit" class="btn-primary-small">Log in</button>
+            </form>
+        </div>
+    </div>
 
     <div class="container">
       
@@ -36,7 +65,7 @@
                 <nav class="userhub-link-wrapper">
                     <ul class="userhub-links">
                         <li class="userhub-icon">
-                            <a href="#" class="userhub-icon-link"><i class="fa-solid fa-right-to-bracket"></i>Login/Sign-up</a>
+                            <a href="#" id='btn-login-signup' class="userhub-icon-link"><i class="fa-solid fa-right-to-bracket"></i>Login/Sign-up</a>
                         </li>
                         <li class="userhub-icon">
                             <a href="#" class="userhub-icon-link"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
